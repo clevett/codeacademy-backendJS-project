@@ -3,7 +3,12 @@ const minionsRouter = require('express').Router()
 module.exports = minionsRouter
 
 //Database
-const { addToDatabase, getAllFromDatabase, getFromDatabaseById, updateInstanceInDatabase, deleteFromDatabasebyId } = require('./db')
+const { 
+  addToDatabase, 
+  getAllFromDatabase, 
+  getFromDatabaseById, 
+  updateInstanceInDatabase, 
+  deleteFromDatabasebyId } = require('./db')
 
 //Schema
 //id: string
