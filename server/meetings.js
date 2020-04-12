@@ -2,6 +2,15 @@ const meetingsRouter = require('express').Router()
 
 module.exports = meetingsRouter;
 
+//Database
+const { getAllFromDatabase, addToDatabase, deleteAllFromDatabase, createMeeting } = require('./db')
+
+//Schema
+//time: string
+//date: JS Date object
+//day: string
+//note: string
+
 //GET /api/meetings to get an array of all meetings.
 meetingsRouter.get('/', (req, res, next) => {
 

@@ -2,6 +2,16 @@ const ideasRouter = require('express').Router()
 
 module.exports = ideasRouter;
 
+//Database
+const { addToDatabase, getAllFromDatabase, getFromDatabaseById, updateInstanceInDatabase, deleteFromDatabasebyId } = require('./db')
+
+//Schema
+//id: string
+//name: string
+//description: string
+//numWeeks: number
+//weeklyRevenue: number
+
 //GET /api/ideas to get an array of all ideas.
 ideasRouter.get('/', (req, res, next) => {
 
