@@ -1,6 +1,6 @@
 const ideasRouter = require('express').Router()
 
-module.exports = ideasRouter;
+module.exports = ideasRouter
 
 //Database
 const { addToDatabase, getAllFromDatabase, getFromDatabaseById, updateInstanceInDatabase, deleteFromDatabasebyId } = require('./db')
@@ -37,18 +37,18 @@ ideasRouter.post('/', (req, res, next) => {
 })
 
 //GET /api/ideas/:ideaId to get a single idea by id.
-ideasRouter.get('/:ideaId', (req, res, next) => {
+ideasRouter.get('/:id', (req, res, next) => {
   req.send(req.idea)
 })
 
 //PUT /api/ideas/:ideaId to update a single idea by id.
-ideasRouter.put('/:ideaId', (req, res, next) => {
+ideasRouter.put('/:id', (req, res, next) => {
   let updatedInstance = updateInstanceInDatabase('ideas', req.body)
   res.send(updatedInstance)
 })
 
 //DELETE /api/ideas/:ideaId to delete a single idea by id
-ideasRouter.delete('/:ideaId', (req, res, next) => {
+ideasRouter.delete('/:id', (req, res, next) => {
   const deleted = deleteFromDatabasebyId('ideas', req.param.id)
   if (deleted) {
     res.status(204)
